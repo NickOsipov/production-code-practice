@@ -4,6 +4,8 @@ import pandas as pd
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 
+from src.config import FEATURES
+
 
 def load_data() -> pd.DataFrame:
     """
@@ -17,7 +19,7 @@ def load_data() -> pd.DataFrame:
     iris = load_iris()
     X = iris.data
     y = iris.target
-    df = pd.DataFrame(X, columns=iris.feature_names)
+    df = pd.DataFrame(X, columns=FEATURES)
     df["target"] = y
     return df
 
